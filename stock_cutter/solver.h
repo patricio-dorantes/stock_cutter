@@ -3,7 +3,7 @@
 
 #include "pttn.h"
 #include "CoinPackedMatrix.hpp"
-#include "OsiClp/OsiClpSolverInterface.hpp"
+#include "OsiClpSolverInterface.hpp"
 
 // Object wrapping the MIP solver
 class solver {

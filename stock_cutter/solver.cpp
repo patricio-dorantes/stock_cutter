@@ -3,9 +3,7 @@
 #include "solver.h"
 #include "CoinPackedVector.hpp"
 #include "CbcModel.hpp"
-//#include "CbcCompareDepth.hpp"
-//#include "CbcCompareObjective.hpp"
-//#include "CbcCompareEstimate.hpp"
+
 using namespace std;
 
 solver::solver(void) {

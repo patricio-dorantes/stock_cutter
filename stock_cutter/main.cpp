@@ -23,39 +23,35 @@ int main(int argc, char* argv[])
 	int problem_ct = 0;
 	csv_io csv;
 	string root;
-	cout << "Please enter the name (no spaces allowed) of the .csv file that you wish to examine (without the .csv extension): ";
-	cin >> root;
-	csv.setfilename(root);
+
+	if( argc < 2 ) {
+		cerr << "Not enough cmd line arguments provided!\n";
+		exit(EXIT_FAILURE);
+	}
+	const auto fileName = string( argv[ 1 ] );
+	csv.setfilename(fileName);
 	while (csv.getproblem()) {
 		++problem_ct;
 		int N, M, L;
 		M = csv.M;
 		L = csv.L;
-		cout << "\nProblem #" << problem_ct << " loaded successfully!" << endl;
+		cout << "\gnProblem #" << problem_ct << " loaded successfully!" << endl;
 		cout << "Performing consistency checks..." << endl;
 		if (L <= 0) {
 			cerr << "Inconsistency: Length of stock material " << L << " must be a positive integer." << endl;
-			cout << "Type something and hit ENTER to exit... ";
-			cin >> root;
 			exit(EXIT_FAILURE);
 		}
 		if (M == 0) {
 			cerr << "Inconsistency: Problem has no orders associated with it." << endl;
-			cout << "Type something and hit ENTER to exit... ";
-			cin >> root;
 			exit(EXIT_FAILURE);
 		}
 		for (i = 0; i < M; ++i) {
 			if (csv.Lv[i] <= 0 || csv.Lv[i] > L) {
 				cerr << "Inconsistency: Order width " << csv.Lv[i] << " does not satisfy 0 < value <= " << L << "." << endl;
-				cout << "Type something and hit ENTER to exit... ";
-				cin >> root;
 				exit(EXIT_FAILURE);
 			}
 			if (csv.qv[i] <= 0) {
 				cerr << "Inconsistency: Order quantity " << csv.qv[i] << " must be a positive integer." << endl;
-				cout << "Type something and hit ENTER to exit... ";
-				cin >> root;
 				exit(EXIT_FAILURE);
 			}
 		}
@@ -93,7 +89,5 @@ int main(int argc, char* argv[])
 		csv.reset();
 	}
 	cout << "\nProgram is done executing! Have fun!! :)" << endl;
-	cout << "Type something and hit ENTER to exit... ";
-	cin >> root;
 	return 0;
 }

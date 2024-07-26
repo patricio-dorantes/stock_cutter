@@ -1,3 +1,10 @@
+# Fork description:
+
+- Linux and Docker image translation.
+- Cmd-line arguments on file in/out.
+
+# Original repo README.txt
+
 README for stock_cutter
 Author: Thomas Loke
 
