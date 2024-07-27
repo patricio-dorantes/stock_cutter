@@ -1,6 +1,9 @@
 #include "stdafx.h"
 
 #include "pttn.h"
+
+#include <iostream>
+
 using namespace std;
 
 pttn::pttn(void) {
@@ -12,7 +15,8 @@ pttn::pttn(const pttn& inst) {
 	c = inst.c;
 }
 
-pttn::~pttn(void) {}
+pttn::~pttn(void) {
+}
 
 void pttn::print(bool s) {
 	int i;

@@ -21,5 +21,5 @@ public:
 	~gen_pttn(void);
 	// run: Runs the pattern generation algorithm, assuming Lv, M and L have been initialized
 	void run(void);
-	int MAX_MEMORY;
+	int MAX_SB;
 };
