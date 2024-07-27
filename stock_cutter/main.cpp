@@ -8,7 +8,9 @@ using namespace std;
 /*
 	Author: Thomas Loke
 	Development started: 4th February 2016
-	Acknowledgements: Uses open-source linear programming libraries from http://www.coin-or.org/ - specifically CBC and its dependencies. Distributed under the Eclipse Public License.
+	Acknowledgements: Uses open-source linear programming libraries from http://www.coin-or.org/ - specifically CBC
+	and its dependencies.
+	Distributed under the Eclipse Public License.
 */
 
 /*
@@ -35,7 +37,7 @@ int main(int argc, char* argv[])
 		int N, M, L;
 		M = csv.M;
 		L = csv.L;
-		cout << "\gnProblem #" << problem_ct << " loaded successfully!" << endl;
+		cout << "\nProblem #" << problem_ct << " loaded successfully!" << endl;
 		cout << "Performing consistency checks..." << endl;
 		if (L <= 0) {
 			cerr << "Inconsistency: Length of stock material " << L << " must be a positive integer." << endl;
